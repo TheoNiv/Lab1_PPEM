@@ -9,7 +9,7 @@
 #include <pthread.h>
 
 int stopThreads = 0;
-
+// 
 struct args_thread_sobel
 {
 	int width;
