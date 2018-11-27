@@ -24,6 +24,16 @@
 * @param output
 *        The output image
 */
-void sobel(int width, int height, unsigned char *input, unsigned char *output);
+
+struct args_thread_sobel
+{
+	int width;
+	int height;
+	unsigned char *input;
+	unsigned char *output;
+};
+
+void *sobel(void* args_sobel);
+//void sobel(int width, int height, unsigned char *input, unsigned char *output);
 
 #endif

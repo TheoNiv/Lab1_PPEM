@@ -13,9 +13,16 @@
 
 #include "sobel.h"
 
-void sobel(int width, int height, unsigned char *input, unsigned char *output){
-    int i,j;
 
+//void sobel(int width, int height, unsigned char *input, unsigned char *output){
+void *sobel(void* args_sobel){
+	struct args_thread_sobel *args = args_sobel;
+
+	int i,j;
+	int width = args->width;
+	int height = args->height;
+	unsigned char * input = args->input;
+	unsigned char * output = args->output;
     // Apply the filter
     for(j=1; j<height-1; j++){
         for(i=1; i<width-1; i++){
